@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="pagingMapper">
+	
+	<sql id="header">
+		WITH SEARCH_ORG 
+		AS (
+	</sql>
+	
+	<sql id="footer">
+		)
+		, TOTAL_CNT AS (
+		    SELECT  COUNT(1) AS TOTAL_COUNT
+		    FROM    SEARCH_ORG
+		)
+		SELECT	A.*
+				, B.TOTAL_COUNT
+		FROM	(
+					SELECT  *
+					FROM    (
+					            SELECT  A.*
+					            		, ROWNUM AS RNUM
+					            FROM    SEARCH_ORG A
+								WHERE   ROWNUM <![CDATA[<=]]> #{endNum}
+							)
+					WHERE   RNUM <![CDATA[>=]]> #{startNum}
+				) A
+		CROSS   JOIN TOTAL_CNT B
+	</sql>
+
+</mapper>

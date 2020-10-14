@@ -1,0 +1,47 @@
+<adminMenu>
+	<menu>
+		<name>목록</name>
+		<url>/list</url>
+		<id>ETC</id>
+		<permission>
+			<permission>ADMIN</permission>
+			<permission>USER</permission>
+		</permission>
+	</menu>
+	<menu>
+		<name>메뉴2</name>
+		<url>/menu2</url>
+		<id>BASIC</id> 
+		<permission>
+			<permission>ADMIN</permission>
+			<permission>USER</permission>
+		</permission>
+	</menu>
+	<menu>
+		<name>메뉴3</name>
+		<url>/menu3</url>
+		<id>MEMBER</id>
+		<permission>
+			<permission>ADMIN</permission>
+		</permission>
+		<subMenu>
+			<menu>
+				<name>고객관리</name>
+				<url>/customer/customer</url>
+				<id>MEMLIST</id>
+				<permission>
+					<permission>ADMIN</permission>
+				</permission>
+			</menu>
+			<menu>
+				<name>PHI회원조회</name>
+				<url>/customer/phi</url>
+				<id>PHIMEMBER</id>
+				<permission>
+					<permission>ADMIN</permission>
+				</permission>
+			</menu>
+			
+		</subMenu>
+	</menu>
+</adminMenu>
