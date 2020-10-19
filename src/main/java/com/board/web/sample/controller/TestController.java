@@ -8,11 +8,10 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 
-import com.board.web.admin.service.AdminService;
+import com.board.web.common.exceptions.TestException;
 import com.board.web.common.util.paginator.list.PageableList;
 import com.board.web.sample.service.TestService;
 import com.board.web.sample.vo.TestVo;
@@ -63,5 +62,19 @@ public class TestController {
 		return view;
 	}
 	
+	@GetMapping("/serviceException")
+	public String serviceException() {
+		return sevice.testException(); //service에서 예외발생
+	}
 	
+	
+	@GetMapping("/controllerException")
+	public void controllerException() {
+		throw new NullPointerException(); //controller에서 예외발생
+	}
+		
+	@GetMapping("/testException")
+	public void testException() {
+		throw new TestException(); // 만든 TestExceptiond으로 예외발생
+	}
 }

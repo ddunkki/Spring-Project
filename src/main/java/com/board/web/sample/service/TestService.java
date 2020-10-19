@@ -9,4 +9,6 @@ import com.board.web.sample.vo.TestVo;
 public interface TestService {
 	
 	public PageableList<TestVo> list(Map<String, Object> searchData);
+	
+	public String testException();
 }

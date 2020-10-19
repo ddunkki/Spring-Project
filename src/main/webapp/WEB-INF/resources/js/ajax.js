@@ -77,6 +77,7 @@ function failProcess(response, failCallback) {
 			failCallback(response);
 		}
 		else {
+			alert("RESULT_CODE = " + response.RESULT_CODE);
 			alert(response.RESULT_MSG);
 		}
 		$("#" + response.FIELD_NAME).focus();

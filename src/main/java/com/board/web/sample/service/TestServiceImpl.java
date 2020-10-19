@@ -7,6 +7,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+import com.board.web.common.exceptions.TestException;
 import com.board.web.common.util.paginator.Pager;
 import com.board.web.common.util.paginator.PagerFactory;
 import com.board.web.common.util.paginator.explorer.PageExplorer;
@@ -29,6 +30,11 @@ public class TestServiceImpl implements TestService{
 		result.setList(mapper.list(searchData));
 		
 		return new PageableList<TestVo>(result);
+	}
+
+	@Override
+	public String testException() {
+		throw new TestException();
 	}
 
 }
