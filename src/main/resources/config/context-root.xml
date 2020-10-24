@@ -44,6 +44,7 @@
 	
 	<bean id="sqlSeesionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>
+   		<!-- 스프링이 동작할 때 같이 동작하도록 해주는 설정 -->
         <property name="configLocation" value="classpath:sql/mybatis-config.xml" />
         <property name="mapperLocations" value="classpath:sql/*/*.xml" />
     </bean>
