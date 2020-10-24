@@ -20,7 +20,7 @@ public class MyBatisTest {
 	
 	@Inject
 	private SqlSessionFactory sqlFactory;
-	
+	 
 	@Test
 	public void testFactory() {
 		log.info("==========sqlFactory TEST==========");
