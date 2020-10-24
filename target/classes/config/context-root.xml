@@ -18,14 +18,14 @@
 	<mybatis-spring:scan base-package="com.board.web.**.mapper"/>
 		
 	<!-- dataSource 설정, spring-jdbc 모듈 사용, spring 에서 jdbc 를 통해 오라클 에 접속할 수 있게 함 -->
-<!-- 	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
+	<bean id="dataSource" class="org.springframework.jdbc.datasource.DriverManagerDataSource">
 	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> 
 	    <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
 	    <property name="username" value="scott"></property>
 	    <property name="password" value="scott"></property>
-	</bean> -->
+	</bean>
 	
-	<bean id="dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
+	<!-- <bean id="dataSourceSpied" class="org.apache.commons.dbcp.BasicDataSource" destroy-method="close">
 	    <property name="driverClassName" value="oracle.jdbc.driver.OracleDriver"></property> 
 	    <property name="url" value="jdbc:oracle:thin:@localhost:1521:orcl"></property>
 	    <property name="username" value="scott"></property>
@@ -40,7 +40,7 @@
 	    		<property name="sqlPrefix" value="SQL : " />
 	    	</bean>
 	    </property>
-	</bean>
+	</bean> -->
 	
 	<bean id="sqlSeesionFactory" class="org.mybatis.spring.SqlSessionFactoryBean">
         <property name="dataSource" ref="dataSource"/>

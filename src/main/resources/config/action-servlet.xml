@@ -17,6 +17,7 @@
 	<annotation-driven />
 
 	<!-- Handles HTTP GET requests for /resources/** by efficiently serving up static resources in the ${webappRoot}/resources directory -->
+	<!-- JUnit에서 @ContextConfiguration 경로쓸때 오류나는 이유가 되는듯 -->
 	<resources mapping="/resources/**" location="/WEB-INF/resources/" />
 
 	<!-- Resolves views selected for rendering by @Controllers to .jsp resources in the /WEB-INF/views directory -->
